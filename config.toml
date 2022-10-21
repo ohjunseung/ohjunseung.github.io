@@ -1,6 +1,6 @@
 theme = "hugo-theme-codex" 
 
-title = "Hello, World!"
+title = "Hello, World."
 languageCode = "en-us"
 baseURL = "https://cyberthink777.github.io/"
 copyright = "© {year}"
@@ -43,7 +43,6 @@ copyright = "© {year}"
 [[menu.main]]
   identifier = "about"
   name = "about"
-  title = "Hello, World"
   url = "/"
 
 [[menu.main]]
