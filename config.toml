@@ -3,11 +3,11 @@ theme = "hugo-theme-codex"
 title = "Hello, World."
 languageCode = "en-us"
 baseURL = "https://cyberthink777.github.io/"
-copyright = "© {year}"
+copyright = "© {year} Alexander Matthew"
 
 [params]
   # Following Go formatting
-  dateFormat = "Mon Jan 2 2006"
+  dateFormat = "Monday, January 2 2006"
 
   # Icons will be displayed for those specified.
   # twitter = "https://twitter.com/<your handle>"
@@ -47,5 +47,5 @@ copyright = "© {year}"
 
 [[menu.main]]
   identifier = "blog"
-  name = "weBlog"
+  name = "web-log"
   url = "/blog"
