@@ -1,0 +1,52 @@
+theme = "hugo-theme-codex" 
+
+title = "Hello, World!"
+languageCode = "en-us"
+baseURL = "https://cyberthink777.github.io/"
+copyright = "© {year}"
+
+[params]
+  # Following Go formatting
+  dateFormat = "Mon Jan 2 2006"
+
+  # Icons will be displayed for those specified.
+  # twitter = "https://twitter.com/<your handle>"
+  github = "https://github.com/CyberThink777"
+  # email = "mailto:<your email>"
+  # mastodon = "https://mastodon.social/@nickname"
+  # facebook = "https://facebook.com/<your handle>"
+  # gitlab = "https://gitlab.com/<your handle>"
+  # instagram = "https://instagram.com/<your handle>"
+  # linkedin = "<link to your profile>"
+  # youtube = "https://www.youtube.com/channel/<your channel>"
+  
+  # Display order.
+  # Currently, these icons are supported: 
+  #   "Twitter", "GitHub", "Email", "Mastodon", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
+  iconOrder = ["GitHub"]
+  
+  showPageTitleInTOC = false
+
+# This disables Hugo's default syntax highlighting in favor
+# of prismjs. If you wish to use Hugo's default syntax highlighting
+# over prismjs, remove this. You will also need to remove the prismjs
+# vendor script in layouts/blog/single.html.
+[markup]
+  [markup.highlight]
+    codeFences = false
+    
+  # Allow Raw HTML in markdown files
+  [markup.goldmark.renderer]
+      unsafe = true
+
+# Navigation
+[[menu.main]]
+  identifier = "about"
+  name = "about"
+  title = "Hello, World"
+  url = "/"
+
+[[menu.main]]
+  identifier = "blog"
+  name = "weBlog"
+  url = "/blog"
