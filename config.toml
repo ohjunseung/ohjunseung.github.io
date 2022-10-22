@@ -41,7 +41,6 @@ copyright = "© 2022 Alexander Matthew"
 
 # Navigation
 [[menu.main]]
-  identifier = "about"
   name = "about"
   url = "/"
 
