@@ -46,5 +46,5 @@ copyright = "© 2022 Alexander Matthew"
 
 [[menu.main]]
   identifier = "blog"
-  name = "web-log"
+  name = "WEB-log"
   url = "/blog"
