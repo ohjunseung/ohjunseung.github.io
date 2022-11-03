@@ -2,7 +2,7 @@ theme = "hugo-theme-codex"
 
 title = "Hello, World."
 languageCode = "en-us"
-baseURL = "https://cyberthink777.github.io/"
+baseURL = "https://ohjunseung.github.io/"
 copyright = "© 2022 Alexander Matthew"
 
 [params]
@@ -11,7 +11,7 @@ copyright = "© 2022 Alexander Matthew"
 
   # Icons will be displayed for those specified.
   # twitter = "https://twitter.com/<your handle>"
-  github = "https://github.com/CyberThink777"
+  github = "https://github.com/ohjunseung"
   # email = "mailto:<your email>"
   # mastodon = "https://mastodon.social/@nickname"
   # facebook = "https://facebook.com/<your handle>"
