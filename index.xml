@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello, World.</title>
+    <link>https://ohjunseung.github.io/</link>
+    <description>Recent content on Hello, World.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2022 Alexander Matthew</copyright>
+    <lastBuildDate>Tue, 06 Dec 2022 12:12:05 +0700</lastBuildDate><atom:link href="https://ohjunseung.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Should password be constrained?</title>
+      <link>https://ohjunseung.github.io/blog/password/</link>
+      <pubDate>Tue, 06 Dec 2022 12:12:05 +0700</pubDate>
+      
+      <guid>https://ohjunseung.github.io/blog/password/</guid>
+      <description>Password is one of the most common ways to authenticate ourselves online. Different applications, either web or mobile, all have various constraints for their password input. Most of them need only the alphabet (hence the word in &amp;ldquo;password&amp;rdquo;). Some require different casing, numbers, and symbols. Length is also one of their criteria, a minimum of six characters and a maximum of 32 characters. Is this really necessary? What&amp;rsquo;s the benefit?</description>
+    </item>
+    
+    <item>
+      <title>Goodbye 3G, long live 2G networks.</title>
+      <link>https://ohjunseung.github.io/blog/3g-2g/</link>
+      <pubDate>Sat, 22 Oct 2022 12:10:00 +0700</pubDate>
+      
+      <guid>https://ohjunseung.github.io/blog/3g-2g/</guid>
+      <description>Indonesia decided to kill 3G networks, but keep older 2G standards.
+Why. Why. Why??? Honestly, I don&amp;rsquo;t f*ing know.
+Sometime ago &amp;ldquo;they&amp;rdquo; decided to stop supporting 3G devices, while the coverage of LTE networks still isn&amp;rsquo;t stable enough (subject to bias). Major telecom companies are doing this willingly.
+Okay, maybe we can speculate on the reasoning behind this. Your allocated radio frequencies are not enough to accommodate the 5G radio, so kill 3G instead and use their spectrum.</description>
+    </item>
+    
+  </channel>
+</rss>

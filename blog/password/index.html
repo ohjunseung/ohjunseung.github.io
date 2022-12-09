@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Should password be constrained? | Hello, World.</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="Different apps and programs require password to be matching some criteria. Is it necessary?">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.86d1effd4c412b85ac13db53a90c473a0f256f789b821e131125c9aa25cb6a6d.css" integrity="sha256-htHv/UxBK4WsE9tTqQxHOg8lb3ibgh4TESXJqiXLam0="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.bd9181a2dd2b5bf88b562393294a22273048759dedabcd6609815889cb658541.css" integrity="sha256-vZGBot0rW/iLViOTKUoiJzBIdZ3tq81mCYFYictlhUE="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ohjunseung.github.io\/"
+      },
+      "articleSection" : "blog",
+      "name" : "Should password be constrained?",
+      "headline" : "Should password be constrained?",
+      "description" : "Different apps and programs require password to be matching some criteria. Is it necessary?",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-12-06 12:12:05 \u002b0700 WIB",
+      "dateModified" : "2022-12-06 12:12:05 \u002b0700 WIB",
+      "url" : "https:\/\/ohjunseung.github.io\/blog\/password\/",
+      "wordCount" : "455",
+      "keywords" : ["Blog"]
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/">about</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/blog">WEB-log</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Should password be constrained?</h1>
+            <time datetime="2022-12-06 12:12:05 &#43;0700 WIB" class="post__date">Tuesday, December 6 2022</time> 
+          </header>
+          <article class="post__content">
+              
+<p>Password is one of the most common ways to authenticate ourselves online. Different applications, either web or mobile,
+all have various constraints for their password input. Most of them need only the alphabet (hence the word in &ldquo;password&rdquo;).
+Some require different casing, numbers, and symbols. Length is also one of their criteria, a minimum of six characters
+and a maximum of 32 characters. Is this really necessary? What&rsquo;s the benefit?</p>
+<p>Of course, a longer password means harder for attackers to brute-force. But a maximum of 32 characters? Does it really make any
+difference? Is it smaller to store in the database, hence doing it this way?
+I even found an app that only allows a maximum eight-character password (or maybe exactly 8, idk).
+Let&rsquo;s see how we store passwords nowadays to prove (or disprove) the idea.</p>
+<h2 id="password-storing">Password Storing<a class="anchor" href="#password-storing">#</a></h2>
+<p>No one in their right mind will store any password verbatim. &ldquo;yourPassword&rdquo; would never be stored as &ldquo;yourPassword&rdquo;.
+We usually use a hashing algorithm to convert plaintext (password) into ciphertext (random text). Most common ones are,
+<a href="https://en.wikipedia.org/wiki/Argon2" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>Argon2</a>, <a href="https://en.wikipedia.org/wiki/Bcrypt" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>bcrypt</a>, <a href="https://en.wikipedia.org/wiki/Scrypt" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>scrypt</a>.
+I won&rsquo;t talk about how password hashing works; you can read more <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>here</a>.</p>
+<p>Okay, the constraint might be derived from the limitation of the password hashing algorithm. Like bcrypt for example,
+have a maximum of 72 bytes input, practically 50 characters which are more than the &ldquo;typical&rdquo; maximum online.
+Something like Argon2 can handle a huge input size. Google limits its password input
+between 8 to 100 characters. Very logical; thinking something like argon2 can handle this input.</p>
+<p>Usually, hashing algorithm will produce the same size output. So, the argument for saving storage by limiting password
+input is pretty much invalid.
+Hashing algorithm also takes raw bytes as input, so including symbols and changing letter casing doesn&rsquo;t really matter.</p>
+<p>Let&rsquo;s try Argon2 in Argon2id mode with some input examples. Here I specify the output length to be 16 bytes.</p>
+<pre><code>parameters: $argon2id$v=19$m=16,t=2,p=1$
+salt: kpYc2O20J0rLlpNZ
+
+input                           -&gt; output in hex
+---
+exactly8                        -&gt; 9e7ccabb91d20a45c875d1f7cd974437
+atozonly                        -&gt; 67094c5c3a96cb205621d62a545666ae
+AtozOnly                        -&gt; 020f12120beec77286da2b96b67d6b4d
+atoZwith+symbols=?              -&gt; 69d9692f93a2e05ffb0ce512079ee632
+atoZwith+symbols=?and123        -&gt; 63d7094636891d4ca1e4a72e4e518b34
+completelyrandomtextbutverylong -&gt; fbabc6b60e7cce389724d537d3fc2772
+---
+</code></pre>
+<h2 id="conclusion">Conclusion<a class="anchor" href="#conclusion">#</a></h2>
+<p>As we can see, password input doesn&rsquo;t have any effect on the hasher output. This means that storage size doesn&rsquo;t change
+between inputs. All of the examples would produce precisely 16 bytes. We can safely say password doesn&rsquo;t need to be constrained.</p>
+<p>The security of passwords depends on which algorithm is used and how you implement the algorithm. Any flaw in the algorithm
+would compromise security. Improper use of the technology would also create flaws.
+So this matter more than how complex your password input is. I&rsquo;m not a security expert, and my advice might not be valid,
+but usually, something long is enough to slow down brute-force attacks.</p>
+
+
+              
+          </article>
+          
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://ohjunseung.github.io/blog/3g-2g/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Goodbye 3G, long live 2G networks.</span>
+    </a>
+  
+
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a
+        class="social-icons__link"
+        title="GitHub"
+        href="https://github.com/ohjunseung"
+        target="_blank"
+        rel="me noopener"
+      >
+        <div class="social-icons__icon" style="background-image: url('https://ohjunseung.github.io/svg/github.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2022 Alexander Matthew</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.301a8b0870381bf76b3b5182e8966d363a0474281183439beb024d8b8228fc66.js" integrity="sha256-MBqLCHA4G/drO1GC6JZtNjoEdCgRg0Ob6wJNi4Io/GY=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>
