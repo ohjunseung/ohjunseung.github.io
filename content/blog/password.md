@@ -5,7 +5,7 @@ slug: ""
 description: "Different apps and programs require password to be matching some criteria. Is it necessary?"
 keywords: []
 draft: false
-tags: []
+tags: [tech-rant]
 math: false
 toc: false
 ---
