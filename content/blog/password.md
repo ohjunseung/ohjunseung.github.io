@@ -60,3 +60,9 @@ The security of passwords depends on which algorithm is used and how you impleme
 would compromise security. Improper use of the technology would also create flaws.
 So this matter more than how complex your password input is. I'm not a security expert, and my advice might not be valid,
 but usually, something long is enough to slow down brute-force attacks.
+
+### Read More
+"I could use any random word or phrase for my password, then?". Yes, you could, but you shouldn't.
+"Should I remove every constraint for usability? How about security?". If you have these kinds of questions in mind, checkout
+this talk on USENIX Security '16 about [zxcvbn: Low-Budget Password Strength Estimation](https://youtu.be/vf37jh3dV2I) by Daniel Lowe Wheeler.
+Or read [zxcvbn repository](https://github.com/dropbox/zxcvbn).
