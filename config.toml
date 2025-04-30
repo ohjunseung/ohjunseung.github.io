@@ -3,7 +3,7 @@ theme = "hugo-theme-codex"
 title = "Hello, World."
 languageCode = "en-us"
 baseURL = "https://ohjunseung.github.io/"
-copyright = "© 2022 Alexander Matthew"
+copyright = "© 2025 Alexander Matthew"
 
 [params]
   # Following Go formatting
