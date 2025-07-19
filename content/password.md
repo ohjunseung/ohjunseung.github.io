@@ -1,14 +1,10 @@
----
-title: "Should password be constrained?"
-date: 2022-12-06T12:12:05+07:00
-slug: ""
-description: "Different apps and programs require password to be matching some criteria. Is it necessary?"
-keywords: []
-draft: false
-tags: [tech-rant]
-math: false
-toc: false
----
++++
+title = "Should password be constrained?"
+date = 2022-12-06T12:12:05+07:00
+description = "Different apps and programs require password to be matching some criteria. Is it necessary?"
+draft = false
+extra.tag = "tech-rant"
++++
 Password is one of the most common ways to authenticate ourselves online. Different applications, either web or mobile,
 all have various constraints for their password input. Most of them need only the alphabet (hence the word in "password").
 Some require different casing, numbers, and symbols. Length is also one of their criteria, a minimum of six characters

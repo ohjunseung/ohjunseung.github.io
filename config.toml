@@ -1,50 +1,20 @@
-theme = "hugo-theme-codex" 
+base_url = "https://ohjunseung.github.io"
+title = "Hello, World"
+description = "My expositions against the world!!"
+author = "Alexander Matthew"
 
-title = "Hello, World."
-languageCode = "en-us"
-baseURL = "https://ohjunseung.github.io/"
-copyright = "© 2025 Alexander Matthew"
+compile_sass = true
+generate_feeds = true
+build_search_index = true
+theme = "lightspeed"
 
-[params]
-  # Following Go formatting
-  dateFormat = "Monday, January 2 2006"
+[markdown]
+highlight_code = true
+highlight_theme = "gruvbox-light"
 
-  # Icons will be displayed for those specified.
-  # twitter = "https://twitter.com/<your handle>"
-  github = "https://github.com/ohjunseung"
-  # email = "mailto:<your email>"
-  # mastodon = "https://mastodon.social/@nickname"
-  # facebook = "https://facebook.com/<your handle>"
-  # gitlab = "https://gitlab.com/<your handle>"
-  # instagram = "https://instagram.com/<your handle>"
-  # linkedin = "<link to your profile>"
-  # youtube = "https://www.youtube.com/channel/<your channel>"
-  
-  # Display order.
-  # Currently, these icons are supported: 
-  #   "Twitter", "GitHub", "Email", "Mastodon", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
-  iconOrder = ["GitHub"]
-  
-  showPageTitleInTOC = false
-
-# This disables Hugo's default syntax highlighting in favor
-# of prismjs. If you wish to use Hugo's default syntax highlighting
-# over prismjs, remove this. You will also need to remove the prismjs
-# vendor script in layouts/blog/single.html.
-[markup]
-  [markup.highlight]
-    codeFences = false
-    
-  # Allow Raw HTML in markdown files
-  [markup.goldmark.renderer]
-      unsafe = true
-
-# Navigation
-[[menu.main]]
-  name = "about"
-  url = "/"
-
-[[menu.main]]
-  identifier = "blog"
-  name = "WEB-log"
-  url = "/blog"
+[extra]
+footer_links = [
+    {url = "https://github.com/ohjunseung", name = "Github"},
+    {url = "$BASE_URL/atom.xml", name = "RSS"},
+]
+footer_credits = false

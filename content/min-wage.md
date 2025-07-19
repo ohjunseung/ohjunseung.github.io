@@ -1,14 +1,10 @@
----
-title: "Correlation of Minimum Wage and Food Price"
-date: 2025-04-30T13:25:15+07:00
-slug: ""
-description: "A random thought on the correlation between wages and prices of goods, especially food. And how it can be an economic indicator."
-keywords: []
-draft: false
-tags: [random-thesis]
-math: false
-toc: false
----
++++
+title = "Correlation of Minimum Wage and Food Price"
+date = 2025-04-30T13:25:15+07:00
+description = "A random thought on the correlation between wages and prices of goods, especially food. And how it can be an economic indicator."
+draft = false
+extra.tag = "random-thesis"
++++
 
 Some time ago I proposed a little thesis inside my head: what if the minimum wage of a country is calibrated against their food prices?
 Let's say an hourly rate for human work is equal to a plate of lunch. We may constrain that a little more, a plate of dish
