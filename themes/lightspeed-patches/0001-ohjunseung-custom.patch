@@ -1,0 +1,69 @@
+From 7e582b1697eb1e182f5c3ba6b4132b7b3716ce39 Mon Sep 17 00:00:00 2001
+From: Alexander Matthew <alexanderm61@gmail.com>
+Date: Sun, 20 Jul 2025 00:59:03 +0700
+Subject: [PATCH] ohjunseung custom
+
+---
+ sass/style.scss     |  8 +++++---
+ templates/404.html  |  2 +-
+ templates/page.html | 10 +++++++---
+ 3 files changed, 13 insertions(+), 7 deletions(-)
+
+diff --git a/sass/style.scss b/sass/style.scss
+index 1347dda..8a39a6a 100644
+--- a/sass/style.scss
++++ b/sass/style.scss
+@@ -2,9 +2,7 @@ html,
+ body {
+ 	background: #fffaf7;
+ 	color: #2d2d2d;
+-	font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+-		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+-		"Segoe UI Symbol";
++	font: 1.1em/1.5 -apple-system, sans-serif;
+ 	scrollbar-gutter: stable both-edges;
+ }
+ a,
+@@ -50,3 +48,7 @@ img {
+ 		width: 100%;
+ 	}
+ }
++
++article {
++	p { text-align: justify;}
++}
+diff --git a/templates/404.html b/templates/404.html
+index ac398d8..f9fc330 100755
+--- a/templates/404.html
++++ b/templates/404.html
+@@ -3,5 +3,5 @@
+ 
+ {% block content %}
+ <h1>404: Page not found</h1>
+-<p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ config.base_url | safe }}/">Head back home</a> to try finding it again.</p>
++<p>I guess you're drunk. <a href="{{ config.base_url | safe }}/">Head back home</a> to try finding it again.</p>
+ {% endblock content %}
+diff --git a/templates/page.html b/templates/page.html
+index f21257d..98d6a4a 100755
+--- a/templates/page.html
++++ b/templates/page.html
+@@ -16,9 +16,13 @@
+ <article>
+   <h1>{{ page.title }}</h1>
+ 
+-  {% if page.date %}
+-    <p style="font-size:90%;">Posted on <time datetime="{{ page.date | date(format="%+") }}">{{ page.date | date(format="%B %d, %Y") }}</time></p>
+-  {% endif %}
++  <div style="display: flex; flex-flow: row; justify-content: space-between;">
++    {% if page.date %}
++      <p style="font-size:90%;">Posted on <time datetime="{{ page.date | date(format="%+") }}">{{ page.date | date(format="%B %d, %Y") }}</time></p> 
++    {% endif %}
++
++    <p>#{{page.extra.tag}}</p>
++  </div>
+ 
+   {{ page.content | safe }}
+ </article>
+-- 
+2.50.1
+
