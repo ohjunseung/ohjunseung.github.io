@@ -1,7 +1,7 @@
 From 7e582b1697eb1e182f5c3ba6b4132b7b3716ce39 Mon Sep 17 00:00:00 2001
 From: Alexander Matthew <alexanderm61@gmail.com>
 Date: Sun, 20 Jul 2025 00:59:03 +0700
-Subject: [PATCH] ohjunseung custom
+Subject: [PATCH 1/2] ohjunseung custom
 
 ---
  sass/style.scss     |  8 +++++---

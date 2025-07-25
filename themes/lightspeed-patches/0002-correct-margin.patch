@@ -1,0 +1,25 @@
+From a8e0049de1013ef6a5bbc1b443ba5d35c13aa774 Mon Sep 17 00:00:00 2001
+From: Alexander Matthew <alexanderm61@gmail.com>
+Date: Fri, 25 Jul 2025 21:15:39 +0700
+Subject: [PATCH 2/2] correct margin
+
+---
+ templates/page.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/templates/page.html b/templates/page.html
+index 98d6a4a..0a2baae 100755
+--- a/templates/page.html
++++ b/templates/page.html
+@@ -21,7 +21,7 @@
+       <p style="font-size:90%;">Posted on <time datetime="{{ page.date | date(format="%+") }}">{{ page.date | date(format="%B %d, %Y") }}</time></p> 
+     {% endif %}
+ 
+-    <p>#{{page.extra.tag}}</p>
++    <p style="margin-left: 1em;">#{{page.extra.tag}}</p>
+   </div>
+ 
+   {{ page.content | safe }}
+-- 
+2.50.1
+
