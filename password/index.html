@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Should password be constrained? &middot; Hello, World</title>
+    <meta name="description" content="Different apps and programs require password to be matching some criteria. Is it necessary?" />
+    <link rel="shortcut icon"  href="https://ohjunseung.github.io/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://ohjunseung.github.io/atom.xml">
+
+    <style>html,body{background:#fffaf7;color:#2d2d2d;font:1.1em/1.5 -apple-system,sans-serif;scrollbar-gutter:stable both-edges}a,a:visited{color:darkred;text-decoration:none}a:hover{text-decoration:underline}main{margin:auto;max-width:38rem;padding:.8rem;padding-top:4vh}pre{background:#fff;overflow:scroll;padding:1rem}td{border:1px solid #2d2d2d;padding:10px}img{height:auto;max-width:100%}.homepage-list{list-style:none;padding:1rem 0}.homepage-list li{align-items:center;display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:10px}@media (max-width: 38rem){.homepage-list li a{width:100%}}article p{text-align:justify}</style>
+
+    <meta property="og:site_name" content="Hello, World">
+      <meta name="author" content="Alexander Matthew" />
+      <meta property="og:title" content="Should password be constrained?">
+      <meta property="og:description" content="Different apps and programs require password to be matching some criteria. Is it necessary?">
+      <meta property="og:url" content="https://ohjunseung.github.io/password/">
+      <meta property="og:image" content="https://ohjunseung.github.io/lightning.png">
+
+      <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="2022-12-06T12:12:05+07:00" />
+
+      
+      
+    
+
+  </head>
+  
+
+  <body>
+    <main id="main" role="main">
+
+      
+      <header role="banner">
+        <h3 style="margin-top:0;">
+          <a href="https://ohjunseung.github.io" title="Home">Hello, World</a>
+          <br /><small>My expositions against the world!!</small>
+        </h3>
+      </header>
+      <hr />
+      
+
+      
+<article>
+  <h1>Should password be constrained?</h1>
+
+  <div style="display: flex; flex-flow: row; justify-content: space-between;">
+    
+      <p style="font-size:90%;">Posted on <time datetime="2022-12-06T12:12:05+07:00">December 06, 2022</time></p> 
+    
+
+    <p style="margin-left: 1em;">#tech-rant</p>
+  </div>
+
+  <p>Password is one of the most common ways to authenticate ourselves online. Different applications, either web or mobile,
+all have various constraints for their password input. Most of them need only the alphabet (hence the word in "password").
+Some require different casing, numbers, and symbols. Length is also one of their criteria, a minimum of six characters
+and a maximum of 32 characters. Is this really necessary? What's the benefit?</p>
+<p>Of course, a longer password means harder for attackers to brute-force. But a maximum of 32 characters? Does it really make any
+difference? Is it smaller to store in the database, hence doing it this way?
+I even found an app that only allows a maximum eight-character password (or maybe exactly 8, idk).
+Let's see how we store passwords nowadays to prove (or disprove) the idea.</p>
+<h2 id="password-storing">Password Storing</h2>
+<p>No one in their right mind will store any password verbatim. "yourPassword" would never be stored as "yourPassword".
+We usually use a hashing algorithm to convert plaintext (password) into ciphertext (random text). Most common ones are,
+<a href="https://en.wikipedia.org/wiki/Argon2">Argon2</a>, <a href="https://en.wikipedia.org/wiki/Bcrypt">bcrypt</a>, <a href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a>.
+I won't talk about how password hashing works; you can read more <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function#Password_verification">here</a>.</p>
+<p>Okay, the constraint might be derived from the limitation of the password hashing algorithm. Like bcrypt for example,
+have a maximum of 72 bytes input, practically 50 characters which are more than the "typical" maximum online.
+Something like Argon2 can handle a huge input size. Google limits its password input
+between 8 to 100 characters. Very logical; thinking something like argon2 can handle this input.</p>
+<p>Usually, hashing algorithm will produce the same size output. So, the argument for saving storage by limiting password
+input is pretty much invalid.
+Hashing algorithm also takes raw bytes as input, so including symbols and changing letter casing doesn't really matter.</p>
+<p>Let's try Argon2 in Argon2id mode with some input examples. Here I specify the output length to be 16 bytes.</p>
+<pre style="background-color:#fcf0ca;color:#282828aa;"><code><span>parameters: $argon2id$v=19$m=16,t=2,p=1$
+</span><span>salt: kpYc2O20J0rLlpNZ
+</span><span>
+</span><span>input                           -&gt; output in hex
+</span><span>---
+</span><span>exactly8                        -&gt; 9e7ccabb91d20a45c875d1f7cd974437
+</span><span>atozonly                        -&gt; 67094c5c3a96cb205621d62a545666ae
+</span><span>AtozOnly                        -&gt; 020f12120beec77286da2b96b67d6b4d
+</span><span>atoZwith+symbols=?              -&gt; 69d9692f93a2e05ffb0ce512079ee632
+</span><span>atoZwith+symbols=?and123        -&gt; 63d7094636891d4ca1e4a72e4e518b34
+</span><span>completelyrandomtextbutverylong -&gt; fbabc6b60e7cce389724d537d3fc2772
+</span><span>---
+</span></code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>As we can see, password input doesn't have any effect on the hasher output. This means that storage size doesn't change
+between inputs. All of the examples would produce precisely 16 bytes. We can safely say password doesn't need to be constrained.</p>
+<p>The security of passwords depends on which algorithm is used and how you implement the algorithm. Any flaw in the algorithm
+would compromise security. Improper use of the technology would also create flaws.
+So this matter more than how complex your password input is. I'm not a security expert, and my advice might not be valid,
+but usually, something long is enough to slow down brute-force attacks.</p>
+<h3 id="read-more">Read More</h3>
+<p>"I could use any random word or phrase for my password, then?". Yes, you could, but you shouldn't.
+"Should I remove every constraint for usability? How about security?". If you have these kinds of questions in mind, checkout
+this talk on USENIX Security '16 about <a href="https://youtu.be/vf37jh3dV2I">zxcvbn: Low-Budget Password Strength Estimation</a> by Daniel Lowe Wheeler.
+Or read <a href="https://github.com/dropbox/zxcvbn">zxcvbn repository</a>.</p>
+
+</article>
+
+
+      
+      <footer role="contentinfo">
+        <hr />
+        
+        <nav style="margin-bottom:1rem;" role="navigation">
+          
+            <a href="https://github.com/ohjunseung">Github</a>
+            
+              <span>&middot;</span>
+            
+          
+            <a href="https://ohjunseung.github.io/atom.xml">Atom</a>
+            
+          
+        </nav>
+        
+        
+      </footer>
+      
+
+    </main>
+    
+    
+  </body>
+</html>
+

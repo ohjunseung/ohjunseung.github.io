@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Hello, World</title>
+    <subtitle>My expositions against the world!!</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://ohjunseung.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://ohjunseung.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-04-30T13:25:15+07:00</updated>
+    <id>https://ohjunseung.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Correlation of Minimum Wage and Food Price</title>
+        <published>2025-04-30T13:25:15+07:00</published>
+        <updated>2025-04-30T13:25:15+07:00</updated>
+        
+        <author>
+          <name>
+            
+              Alexander Matthew
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://ohjunseung.github.io/min-wage/"/>
+        <id>https://ohjunseung.github.io/min-wage/</id>
+        
+        <content type="html" xml:base="https://ohjunseung.github.io/min-wage/">&lt;p&gt;Some time ago I proposed a little thesis inside my head: what if the minimum wage of a country is calibrated against their food prices?
+Let&#x27;s say an hourly rate for human work is equal to a plate of lunch. We may constrain that a little more, a plate of dish
+in a shopping center, hawker center, or something along these lines.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, in Indonesia, we might say the food price range would be around 30k to 60k Rupiah. Take the average from that number,
+and to make it simpler, the proposed rate would be 50,000.00 Rupiah. That means 50k would buy your time for an hour.
+For Indonesians out there, the calculation would be 40 hours a week (normal work time) times 50k Rupiah.
+2 million times 4 weeks, 8 million Rupiah a month, should be the minimum wage (UMR). Of course you can adjust according to your region.
+You&#x27;re welcome to test this thesis against your own country. Is it above or below the proposed rate.&lt;&#x2F;p&gt;
+&lt;p&gt;With that example above, we know that the Indonesian minimum wage is less than our proposed value. This might also mean that
+most Indonesian are underpaid.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;applying-to-economics&quot;&gt;Applying to Economics&lt;&#x2F;h2&gt;
+&lt;p&gt;To reach this ideal, proposed value, there are two options we can take.
+First, just make the pay higher, like most capitalist countries. Higher goods prices are equal to higher pay.
+Second, make the goods cheaper so the buying power increases without any wage increase. This sounds more like socialist play.&lt;&#x2F;p&gt;
+&lt;p&gt;The most ideal would be increasing wages and reducing food prices. That might be one of the most impossible things to do.
+The other extreme would be reducing labor pay and increasing food prices. What country would that be?&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Should password be constrained?</title>
+        <published>2022-12-06T12:12:05+07:00</published>
+        <updated>2022-12-06T12:12:05+07:00</updated>
+        
+        <author>
+          <name>
+            
+              Alexander Matthew
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://ohjunseung.github.io/password/"/>
+        <id>https://ohjunseung.github.io/password/</id>
+        
+        <content type="html" xml:base="https://ohjunseung.github.io/password/">&lt;p&gt;Password is one of the most common ways to authenticate ourselves online. Different applications, either web or mobile,
+all have various constraints for their password input. Most of them need only the alphabet (hence the word in &quot;password&quot;).
+Some require different casing, numbers, and symbols. Length is also one of their criteria, a minimum of six characters
+and a maximum of 32 characters. Is this really necessary? What&#x27;s the benefit?&lt;&#x2F;p&gt;
+&lt;p&gt;Of course, a longer password means harder for attackers to brute-force. But a maximum of 32 characters? Does it really make any
+difference? Is it smaller to store in the database, hence doing it this way?
+I even found an app that only allows a maximum eight-character password (or maybe exactly 8, idk).
+Let&#x27;s see how we store passwords nowadays to prove (or disprove) the idea.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;password-storing&quot;&gt;Password Storing&lt;&#x2F;h2&gt;
+&lt;p&gt;No one in their right mind will store any password verbatim. &quot;yourPassword&quot; would never be stored as &quot;yourPassword&quot;.
+We usually use a hashing algorithm to convert plaintext (password) into ciphertext (random text). Most common ones are,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Argon2&quot;&gt;Argon2&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bcrypt&quot;&gt;bcrypt&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scrypt&quot;&gt;scrypt&lt;&#x2F;a&gt;.
+I won&#x27;t talk about how password hashing works; you can read more &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cryptographic_hash_function#Password_verification&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Okay, the constraint might be derived from the limitation of the password hashing algorithm. Like bcrypt for example,
+have a maximum of 72 bytes input, practically 50 characters which are more than the &quot;typical&quot; maximum online.
+Something like Argon2 can handle a huge input size. Google limits its password input
+between 8 to 100 characters. Very logical; thinking something like argon2 can handle this input.&lt;&#x2F;p&gt;
+&lt;p&gt;Usually, hashing algorithm will produce the same size output. So, the argument for saving storage by limiting password
+input is pretty much invalid.
+Hashing algorithm also takes raw bytes as input, so including symbols and changing letter casing doesn&#x27;t really matter.&lt;&#x2F;p&gt;
+&lt;p&gt;Let&#x27;s try Argon2 in Argon2id mode with some input examples. Here I specify the output length to be 16 bytes.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#fcf0ca;color:#282828aa;&quot;&gt;&lt;code&gt;&lt;span&gt;parameters: $argon2id$v=19$m=16,t=2,p=1$
+&lt;&#x2F;span&gt;&lt;span&gt;salt: kpYc2O20J0rLlpNZ
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;input                           -&amp;gt; output in hex
+&lt;&#x2F;span&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;span&gt;exactly8                        -&amp;gt; 9e7ccabb91d20a45c875d1f7cd974437
+&lt;&#x2F;span&gt;&lt;span&gt;atozonly                        -&amp;gt; 67094c5c3a96cb205621d62a545666ae
+&lt;&#x2F;span&gt;&lt;span&gt;AtozOnly                        -&amp;gt; 020f12120beec77286da2b96b67d6b4d
+&lt;&#x2F;span&gt;&lt;span&gt;atoZwith+symbols=?              -&amp;gt; 69d9692f93a2e05ffb0ce512079ee632
+&lt;&#x2F;span&gt;&lt;span&gt;atoZwith+symbols=?and123        -&amp;gt; 63d7094636891d4ca1e4a72e4e518b34
+&lt;&#x2F;span&gt;&lt;span&gt;completelyrandomtextbutverylong -&amp;gt; fbabc6b60e7cce389724d537d3fc2772
+&lt;&#x2F;span&gt;&lt;span&gt;---
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;As we can see, password input doesn&#x27;t have any effect on the hasher output. This means that storage size doesn&#x27;t change
+between inputs. All of the examples would produce precisely 16 bytes. We can safely say password doesn&#x27;t need to be constrained.&lt;&#x2F;p&gt;
+&lt;p&gt;The security of passwords depends on which algorithm is used and how you implement the algorithm. Any flaw in the algorithm
+would compromise security. Improper use of the technology would also create flaws.
+So this matter more than how complex your password input is. I&#x27;m not a security expert, and my advice might not be valid,
+but usually, something long is enough to slow down brute-force attacks.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;read-more&quot;&gt;Read More&lt;&#x2F;h3&gt;
+&lt;p&gt;&quot;I could use any random word or phrase for my password, then?&quot;. Yes, you could, but you shouldn&#x27;t.
+&quot;Should I remove every constraint for usability? How about security?&quot;. If you have these kinds of questions in mind, checkout
+this talk on USENIX Security &#x27;16 about &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;vf37jh3dV2I&quot;&gt;zxcvbn: Low-Budget Password Strength Estimation&lt;&#x2F;a&gt; by Daniel Lowe Wheeler.
+Or read &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dropbox&#x2F;zxcvbn&quot;&gt;zxcvbn repository&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Goodbye 3G, long live 2G networks.</title>
+        <published>2022-10-22T12:10:00+07:00</published>
+        <updated>2022-10-22T12:10:00+07:00</updated>
+        
+        <author>
+          <name>
+            
+              Alexander Matthew
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://ohjunseung.github.io/3g-2g/"/>
+        <id>https://ohjunseung.github.io/3g-2g/</id>
+        
+        <content type="html" xml:base="https://ohjunseung.github.io/3g-2g/">&lt;p&gt;Indonesia decided to kill 3G networks, but keep older 2G standards.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-why-why&quot;&gt;Why. Why. Why???&lt;&#x2F;h2&gt;
+&lt;p&gt;Honestly, I don&#x27;t f*ing know.&lt;&#x2F;p&gt;
+&lt;p&gt;Sometime ago &quot;they&quot; decided to stop supporting 3G devices, while the coverage of LTE networks still isn&#x27;t stable
+enough (subject to bias). Major telecom companies are doing this willingly.&lt;&#x2F;p&gt;
+&lt;p&gt;Okay, maybe we can speculate on the reasoning behind this. Your allocated radio frequencies are not enough to accommodate
+the 5G radio, so kill 3G instead and use their spectrum. Why don&#x27;t we ban 2G band first? Ah, distribution of
+client devices might be the case. A lot people in rural area still uses 2G, so kill 3G instead. According to &quot;something&quot;
+or &quot;someone&quot;, a lot (read: most) people uses of VoIP to make calls, so kill 3G instead (definitely not me, I use both equally).
+Why the hell we need to care about people, so kill 3G instead.&lt;br &#x2F;&gt;
+This is definitely just a political decision to manage radio spectrum and support of the New Radio, they said.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;voice-calls&quot;&gt;Voice calls.&lt;&#x2F;h2&gt;
+&lt;p&gt;Of course, if you can connect to the Internet you can call almost anyone (also read: almost no one) with VoIP.
+Don&#x27;t get me started on this, as this is pretty much straightforward *wink.&lt;&#x2F;p&gt;
+&lt;p&gt;GSM&#x2F;2G has been the standard for communication since &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;w&#x2F;index.php?title=2G&amp;amp;oldid=1114491643#cite_note-Radiolinja&amp;#x27;s_History-1&quot;&gt;1991&lt;&#x2F;a&gt;.
+They even have evolved into EDGE to support higher data rates. Now, 3G upgraded that in voice and also in mobile data.
+So much sense that we should kill the older stuff, no? Or maybe I&#x27;m the one that doesn&#x27;t have much sense, you decide.&lt;&#x2F;p&gt;
+&lt;p&gt;Honestly &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Voice_over_LTE&quot;&gt;VoLTE&lt;&#x2F;a&gt; is the best thing to do these days. Practically though, ...&lt;br &#x2F;&gt;
+In my case, having a VoLTE capable phone and provider should be good right? Wrong! Definitely wrong. The network support sucks.
+All of my calls (as the time of writing) never get through via VoLTE. So, for me at least, it just doesn&#x27;t work.
+If VoLTE is not the solution, VoNR (Voice over 5G) must not be either *wink.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-it-affects-users-me&quot;&gt;How it affects users (me).&lt;&#x2F;h2&gt;
+&lt;p&gt;Most of voice calls here are still using 2G networks. This means that our cellphone needs to move from whatever network
+it currently in to 2G networks. For example, we are using the Internet over LTE to play
+time sensitive game (read: chess), suddenly someone tries to call you via cellphone number, before the ringing signal
+can even get through, your phone will switch to 2G meaning that you lost the connection (read: lose the game). Even after
+the call ends, it takes time to switch back to LTE and get any Internet connection. This also means when we are on a call
+with someone, there is no way to use &lt;a href=&quot;https:&#x2F;&#x2F;www.google.com&#x2F;&quot;&gt;Google&lt;&#x2F;a&gt; to search how&#x27;s the weather today.&lt;&#x2F;p&gt;
+&lt;p&gt;At least for today, I don&#x27;t f*ing know why this must be a thing.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
