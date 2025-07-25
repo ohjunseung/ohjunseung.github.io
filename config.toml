@@ -5,7 +5,7 @@ author = "Alexander Matthew"
 
 compile_sass = true
 generate_feeds = true
-build_search_index = true
+# build_search_index = true
 theme = "lightspeed"
 
 [markdown]
@@ -15,6 +15,6 @@ highlight_theme = "gruvbox-light"
 [extra]
 footer_links = [
     {url = "https://github.com/ohjunseung", name = "Github"},
-    {url = "$BASE_URL/atom.xml", name = "RSS"},
+    {url = "$BASE_URL/atom.xml", name = "Atom"},
 ]
 footer_credits = false
